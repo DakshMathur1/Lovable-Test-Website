@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -84,12 +85,43 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'fade-in': {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' }
+                },
+                'fade-up': {
+                    '0%': { opacity: '0', transform: 'translateY(20px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' }
+                },
+                'subtle-pulse': {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.9' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'fade-in': 'fade-in 0.6s ease-out',
+                'fade-up': 'fade-up 0.7s ease-out',
+                'delayed-fade-up': 'fade-up 0.7s ease-out 0.2s forwards',
+                'subtle-pulse': 'subtle-pulse 4s ease-in-out infinite'
+			},
+            transitionDuration: {
+                '2000': '2000ms',
+            },
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+                display: ['SF Pro Display', 'Inter', 'sans-serif'],
+            },
+            backdropBlur: {
+                xs: '2px',
+            },
+            boxShadow: {
+                'neomorphic': '10px 10px 20px #f0f0f0, -10px -10px 20px #ffffff',
+                'neomorphic-dark': '10px 10px 20px rgba(0,0,0,0.1), -10px -10px 20px rgba(255,255,255,0.05)',
+                'subtle': '0 4px 20px rgba(0, 0, 0, 0.04)'
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
