@@ -9,8 +9,10 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "Features", href: "#features" },
-  { label: "Products", href: "#products" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Education", href: "#education" },
+  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -46,7 +48,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a href="/" className="relative z-10">
           <h1 className="text-xl font-medium tracking-tight">
-            <span className="font-bold">Minimal</span>
+            <span className="font-bold text-indigo-600">Alex</span> Johnson
           </h1>
         </a>
 
@@ -56,16 +58,16 @@ const Navbar: React.FC = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-gray-800 hover:text-black font-medium transition-colors duration-200"
+              className="text-sm text-gray-800 hover:text-indigo-600 font-medium transition-colors duration-200"
             >
               {link.label}
             </a>
           ))}
           <a
-            href="#get-started"
-            className="px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-full transition-all duration-300 hover:bg-black hover:shadow-md"
+            href="#contact"
+            className="px-5 py-2 bg-indigo-600 text-white text-sm font-medium rounded-full transition-all duration-300 hover:bg-indigo-700 hover:shadow-md"
           >
-            Get Started
+            Contact Me
           </a>
         </nav>
 
@@ -109,18 +111,18 @@ const Navbar: React.FC = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-xl text-gray-800 hover:text-black font-medium transition-colors duration-200"
+                className="text-xl text-gray-800 hover:text-indigo-600 font-medium transition-colors duration-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
             <a
-              href="#get-started"
-              className="px-8 py-3 mt-4 bg-gray-900 text-white text-lg font-medium rounded-full transition-all duration-300 hover:bg-black"
+              href="#contact"
+              className="px-8 py-3 mt-4 bg-indigo-600 text-white text-lg font-medium rounded-full transition-all duration-300 hover:bg-indigo-700"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Get Started
+              Contact Me
             </a>
           </nav>
         </div>
